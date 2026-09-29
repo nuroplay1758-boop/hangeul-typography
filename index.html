@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>소리를 그리는 글자 — 한글 타이포그래피</title>
+<meta name="description" content="1443년, 소리를 그려 만든 스물여덟 개의 글자. 한글을 위한 인터랙티브 타이포그래피 스페시멘.">
+<meta name="theme-color" content="#0d0c0b">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Noto+Serif+KR:wght@200..900&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="is-loading">
+
+<div class="grain" aria-hidden="true"></div>
+<div class="progress" aria-hidden="true"><i id="progressBar"></i></div>
+<div class="cursor" aria-hidden="true"><span class="cursor-ring"></span><span class="cursor-label"></span></div>
+
+<!-- ───────────── INTRO ───────────── -->
+<div id="intro" class="intro" aria-hidden="true">
+  <div class="intro-row mono"><span>訓民正音 — Type Specimen</span><span>Vol.01 / 2026</span></div>
+  <div class="intro-center">
+    <div class="intro-word"><span id="compose"></span><span class="caret"></span></div>
+    <div class="intro-keys mono" id="introKeys"></div>
+  </div>
+  <div class="intro-row mono">
+    <span id="counter">000</span>
+    <span class="intro-bar"><i id="introBar"></i></span>
+    <span>Click to skip</span>
+  </div>
+</div>
+<div class="wipe" aria-hidden="true"></div>
+
+<!-- ───────────── NAV ───────────── -->
+<header class="nav">
+  <a href="#top" class="nav-logo" data-cursor="처음으로">한<span>/</span>HG</a>
+  <nav class="nav-links mono">
+    <a href="#preface">01 서문</a>
+    <a href="#cji">02 천지인</a>
+    <a href="#consonants">03 닿소리</a>
+    <a href="#compose-sec">05 모아쓰기</a>
+    <a href="#field">06 들판</a>
+  </nav>
+  <div class="nav-time mono"><span>Seoul</span> <span id="clock">00:00:00</span></div>
+</header>
+
+<main>
+
+<!-- ───────────── HERO ───────────── -->
+<section class="hero" id="top">
+  <div class="hero-meta mono">
+    <span>No.1443</span>
+    <span>A specimen of Hangeul</span>
+    <span>Noto Sans KR · Variable 100—900</span>
+  </div>
+
+  <h1 class="hero-title" id="heroTitle" aria-label="소리를 그리는 글자">
+    <span class="line">소리를</span>
+    <span class="line in">그리는</span>
+    <span class="line">글자<em>.</em></span>
+  </h1>
+
+  <div class="hero-vert serif">訓民正音 · 백성을 가르치는 바른 소리</div>
+
+  <div class="hero-foot">
+    <p class="hero-lede">마우스를 글자 가까이 가져가 보세요.<br>한글은 획의 두께로 숨을 쉽니다.<span class="lat"> — Move closer; the letters breathe in weight.</span></p>
+    <div class="hero-stats mono">
+      <div><b>28</b><span>창제 자모</span></div>
+      <div><b>24</b><span>현대 자모</span></div>
+      <div><b>∞</b><span>소리</span></div>
+    </div>
+    <div class="scroll-cue mono"><span>Scroll</span><i></i></div>
+  </div>
+</section>
+
+<!-- ───────────── 01 PREFACE ───────────── -->
+<section class="sec preface" id="preface">
+  <div class="sec-head mono"><span>01</span><span>서문 — Preface</span><span>1443 — 1446</span></div>
+  <p class="manifesto" id="manifesto">1443년 겨울, 한 임금이 백성을 위해 <em>스물여덟</em> 개의 글자를 만들었다. 목구멍과 혀와 입술의 모양을 본떠 <em>소리를 그렸고,</em> 하늘과 땅과 사람으로 모음을 세웠다. 그러니 이것은 물려받은 문자가 아니라 — 처음부터 <em>설계된</em> 소리의 도면이다.</p>
+  <div class="preface-foot">
+    <p class="lat">An alphabet designed, not inherited —<br><i>its shapes are drawings of the mouth that speaks them.</i></p>
+    <div class="mono">훈민정음 해례본 · 1446</div>
+  </div>
+</section>
+
+<!-- ───────────── NUMBERS ───────────── -->
+<section class="sec numbers" id="numbers">
+  <div class="sec-head mono"><span>—</span><span>숫자로 본 한글 — By the numbers</span><span>4 facts</span></div>
+  <div class="num-grid">
+    <div class="num"><span class="num-v" data-count="1443" data-plain>0</span><span class="num-l">창제 연도<i class="mono">Year of creation</i></span></div>
+    <div class="num"><span class="num-v" data-count="24">0</span><span class="num-l">오늘 쓰는 자모<i class="mono">Letters in use</i></span></div>
+    <div class="num"><span class="num-v" data-count="11172">0</span><span class="num-l">조합 가능한 음절<i class="mono">19 × 21 × 28 syllables</i></span></div>
+    <div class="num"><span class="num-v" data-count="3">0</span><span class="num-l">모음의 원소<i class="mono">Heaven · Earth · Human</i></span></div>
+  </div>
+</section>
+
+<div class="mq-wrap">
+  <div class="mq" data-dir="1"><div class="mq-inner">
+    <span>가나다라마바사</span><em>✳</em><span class="lat">Hangeul</span><em>✳</em><span class="serif">아자차카타파하</span><em>✳</em><span class="outline">소리를 그리다</span><em>✳</em>
+    <span>가나다라마바사</span><em>✳</em><span class="lat">Hangeul</span><em>✳</em><span class="serif">아자차카타파하</span><em>✳</em><span class="outline">소리를 그리다</span><em>✳</em>
+  </div></div>
+</div>
+
+<!-- ───────────── 02 천지인 ───────────── -->
+<section class="cji" id="cji">
+  <div class="cji-inner">
+    <div class="cji-left">
+      <div class="sec-head mono"><span>02</span><span>천·지·인</span><span>Heaven · Earth · Human</span></div>
+      <div class="cji-glyph serif" id="cjiGlyph">ㆍㅡㅣ</div>
+      <p class="cji-desc" id="cjiDesc">점(ㆍ)은 둥근 하늘, 누운 선(ㅡ)은 평평한 땅, 선 선(ㅣ)은 서 있는 사람.</p>
+      <div class="cji-steps mono" id="cjiSteps">
+        <span class="on">ㆍㅡㅣ</span><span>ㅏ</span><span>ㅓ</span><span>ㅗ</span><span>ㅜ</span>
+      </div>
+    </div>
+    <div class="cji-stage" id="cjiStage">
+      <div class="cji-grid"></div>
+      <i class="cj cj-dot"></i><i class="cj cj-h"></i><i class="cj cj-v"></i>
+      <span class="cj-tag mono t1">天</span><span class="cj-tag mono t2">地</span><span class="cj-tag mono t3">人</span>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────── 03 CONSONANTS (horizontal) ───────────── -->
+<section class="hs" id="consonants">
+  <div class="hs-track" id="hsTrack">
+    <div class="hs-intro">
+      <div class="sec-head mono"><span>03</span><span>닿소리 — Consonants</span><span>14</span></div>
+      <h2 class="h2" data-split>닿소리 열넷</h2>
+      <p>발음 기관을 본뜬 다섯 기본자 <b>ㄱ ㄴ ㅁ ㅅ ㅇ</b>. 여기에 획을 하나씩 더하면 소리가 거세진다. 글자의 모양이 곧 소리의 세기다.</p>
+      <div class="mono hs-hint">→ 스크롤하면 옆으로 흐릅니다</div>
+    </div>
+  </div>
+  <div class="hs-progress"><i id="hsBar"></i></div>
+</section>
+
+<!-- ───────────── 04 PARTICLES ───────────── -->
+<section class="particles" id="particles" data-cursor="클릭">
+  <canvas id="pcanvas"></canvas>
+  <div class="p-ui">
+    <div class="sec-head mono"><span>04</span><span>입자 — Interlude</span><span id="pWord">1 / 4</span></div>
+    <p class="p-cap mono">글자 위를 쓸어 보세요 · 클릭하면 흩어졌다 다시 모입니다</p>
+  </div>
+</section>
+
+<!-- ───────────── 05 COMPOSER ───────────── -->
+<section class="sec composer" id="compose-sec">
+  <div class="sec-head mono"><span>05</span><span>모아쓰기 — Syllable composer</span><span>초성 + 중성 + 종성</span></div>
+  <h2 class="h2" data-split>한 칸에 모이는 소리</h2>
+
+  <div class="comp-grid">
+    <div class="comp-display">
+      <div class="comp-glyph" id="compGlyph">한</div>
+      <div class="comp-meta mono">
+        <span id="compFormula">ㅎ + ㅏ + ㄴ</span>
+        <span id="compCode">U+D55C</span>
+        <span id="compIndex">#10,897 / 11,172</span>
+      </div>
+    </div>
+    <div class="comp-pickers">
+      <div class="picker"><div class="picker-h mono"><span>초성</span><span>Initial · 19</span></div><div class="picker-b" id="pickCho"></div></div>
+      <div class="picker"><div class="picker-h mono"><span>중성</span><span>Medial · 21</span></div><div class="picker-b" id="pickJung"></div></div>
+      <div class="picker"><div class="picker-h mono"><span>종성</span><span>Final · 28</span></div><div class="picker-b" id="pickJong"></div></div>
+      <button class="btn mono" id="compRandom" type="button" data-cursor="↻">무작위 조합 — Random ↻</button>
+    </div>
+  </div>
+
+  <div class="tester">
+    <div class="tester-bar mono">
+      <label>굵기 <input type="range" id="tW" min="100" max="900" value="700"><output id="tWo">700</output></label>
+      <label>크기 <input type="range" id="tS" min="24" max="220" value="120"><output id="tSo">120</output></label>
+      <div class="seg" role="group" aria-label="글꼴">
+        <button type="button" class="on" data-fam="sans">고딕 Sans</button>
+        <button type="button" data-fam="serif">명조 Serif</button>
+      </div>
+    </div>
+    <div class="tester-text" id="tText" contenteditable="true" spellcheck="false" data-cursor="입력">다람쥐 헌 쳇바퀴에 타고파</div>
+    <div class="mono tester-note">직접 입력해 보세요 · Type anything</div>
+  </div>
+</section>
+
+<!-- ───────────── 06 FIELD ───────────── -->
+<section class="sec field" id="field">
+  <div class="sec-head mono"><span>06</span><span>글자의 들판 — Field of 11,172</span><span>hover · click</span></div>
+  <div class="field-top">
+    <h2 class="h2" data-split>만천백칠십이</h2>
+    <div class="field-count">
+      <div class="field-n"><span id="seenN">0</span><small>/ 11,172</small></div>
+      <div class="mono">당신이 깨운 글자 · Syllables awakened</div>
+      <div class="field-bar"><i id="seenBar"></i></div>
+    </div>
+  </div>
+  <div class="field-grid" id="fieldGrid"></div>
+  <p class="mono field-hint">글자 위를 지나가면 깨어나고, 클릭하면 파문이 번집니다.</p>
+</section>
+
+<div class="mq-wrap dark">
+  <div class="mq" data-dir="-1"><div class="mq-inner">
+    <span class="serif">나랏말싸미</span><em>●</em><span class="outline">듕귁에 달아</span><em>●</em><span>문자와로 서르 사맛디 아니할쎄</span><em>●</em>
+    <span class="serif">나랏말싸미</span><em>●</em><span class="outline">듕귁에 달아</span><em>●</em><span>문자와로 서르 사맛디 아니할쎄</span><em>●</em>
+  </div></div>
+</div>
+
+</main>
+
+<!-- ───────────── FOOTER ───────────── -->
+<footer class="foot" id="foot">
+  <div class="foot-top mono">
+    <span id="dday">한글날까지 D-00</span>
+    <span>소리를 그리는 글자 — A Hangeul specimen</span>
+    <a href="#top" data-cursor="↑">맨 위로 ↑</a>
+  </div>
+  <div class="foot-giant" id="footGiant">한글</div>
+  <div class="foot-bottom mono">
+    <span>Set in Noto Sans KR, Noto Serif KR, Fraunces &amp; JetBrains Mono</span>
+    <span>© 2026 Typographic Specimen</span>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
